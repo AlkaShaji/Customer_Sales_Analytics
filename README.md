@@ -1,6 +1,6 @@
 """
 🛍️ Customer Shopping Behavior Analytics
-----------------------------------------
+
 End-to-End Data Analytics Project using Python, SQL Server, and Power BI
 
 Steps:
@@ -11,25 +11,24 @@ Steps:
 5. Export results for Power BI visualization
 """
 
-# ==========================================================
+
 # 📦 1. Import Required Libraries
-# ==========================================================
+
 import pandas as pd
 from sqlalchemy import create_engine, text
 
-# ==========================================================
-# 📁 2. Load Dataset
-# ==========================================================
-csv_path = r"C:\Users\ALKA\OneDrive\Desktop\Data Analytics project\CUSTOMER_SALES\customer_shopping_behavior.csv"
 
+# 📁 2. Load Dataset
+
+csv_path = "customer_shopping_behavior.csv"
 df = pd.read_csv(csv_path)
 print("✅ Dataset Loaded Successfully!")
 print(f"Rows: {df.shape[0]}, Columns: {df.shape[1]}")
 print(df.head(5))
 
-# ==========================================================
+
 # 🧹 3. Data Cleaning & Feature Engineering
-# ==========================================================
+
 
 # Fill missing review ratings with median by category
 df['Review Rating'] = df.groupby('Category')['Review Rating'].transform(lambda x: x.fillna(x.median()))
@@ -54,11 +53,11 @@ df['purchase_frequency_days'] = df['frequency_of_purchases'].map(freq_map)
 print("\n✅ Data Cleaning & Feature Engineering Completed!")
 print(df.head(5))
 
-# ==========================================================
-# 🧱 4. Connect Python to Microsoft SQL Server
-# ==========================================================
 
-server = r'LENOVO\ALK'             # Replace with your SQL Server instance name
+# 🧱 4. Connect Python to Microsoft SQL Server
+
+
+server = 'sever_name'             # Replace with your SQL Server instance name
 database = 'customer_behavior'      # Database name you created in SSMS
 driver = 'ODBC Driver 17 for SQL Server'
 
@@ -78,17 +77,17 @@ try:
 except Exception as e:
     print("❌ Connection Failed:", e)
 
-# ==========================================================
+
 # 💾 5. Upload Cleaned Data to SQL Server
-# ==========================================================
+
 table_name = 'customer_sales'
 
 df.to_sql(table_name, con=engine, if_exists='replace', index=False)
 print(f"✅ Data uploaded successfully to SQL Server table: {table_name}")
 
-# ==========================================================
+
 # 🧮 6. SQL Business Questions (Q1–Q10)
-# ==========================================================
+
 
 queries = {
     # Q1
@@ -214,36 +213,5 @@ queries = {
     """
 }
 
-# ==========================================================
-# 📊 7. Execute Queries and Display Results
-# ==========================================================
-print("\n📊 Executing SQL Queries (Q1–Q10)...\n")
-with engine.connect() as conn:
-    for name, query in queries.items():
-        print(f"--- {name} ---")
-        result = pd.read_sql(query, conn)
-        print(result.head(10))
-        print("\n")
 
-print("✅ All Queries Executed Successfully!")
 
-# ==========================================================
-# 🧾 8. Next Step: Visualization in Power BI
-# ==========================================================
-"""
-1. Open Power BI Desktop
-2. Connect to SQL Server Database: LENOVO\ALK, Database: customer_behavior
-3. Import the 'customer_sales' table
-4. Create visuals for:
-   - Gender-wise revenue (Q1)
-   - Discount vs. Spend (Q2)
-   - Product Ratings (Q3)
-   - Shipping Performance (Q4)
-   - Subscription Analysis (Q5)
-   - Customer Segmentation (Q7)
-   - Top Products per Category (Q8)
-   - Age Group Revenue Share (Q10)
-"""
-
-print("🎨 Power BI Ready: Connect to 'customer_sales' table in SQL Server and build visuals.")
-print("✅ Project Completed Successfully!")
