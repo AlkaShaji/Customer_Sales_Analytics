@@ -1,57 +1,88 @@
-Customer Sales Behavior Analysis
+## Customer Sales Behavior Analysis
 Python • SQL Server • Power BI • End-to-End Data Analytics Project
 
-Project Overview
+# Project Overview
 This project analyzes customer shopping behavior using Python, SQL Server, and Power BI.
-The goal is to understand patterns in customer demographics, purchase decisions, product performance, and subscription behavior.
+The goal is to uncover insights related to:
 
-Tech Stack
+Customer demographics
+Purchase patterns
+Product performance
+
+Subscription behavior
+
+Discount impact
+
+Revenue contribution
+
+The workflow includes data cleaning → SQL analysis → dashboard visualization.
+
+🚀 Tech Stack
+
 Python → Data cleaning, preprocessing, transformation
-SQL Server → Data storage, analysis queries
+
+SQL Server → Data storage, advanced analytical queries
+
 Power BI → Dashboard visualization
-Pandas, NumPy, SQLAlchemy, pyodbc
 
-Python Tasks (Data Cleaning)
-✔ Handle missing values.
-✔ Column renaming (snake case)
-✔ Create age_group column using qcut
-✔ Add purchase_frequency_days
-✔ Remove duplicate/unnecessary columns
-✔ Upload cleaned data to SQL Server
+Libraries: Pandas, NumPy, SQLAlchemy, pyodbc
 
-Code available in:
+🧹 Python Tasks (Data Cleaning)
+
+The data preparation process includes:
+
+✔ Handling missing values
+✔ Renaming columns into snake_case
+✔ Creating age_group using pd.qcut
+✔ Creating purchase_frequency_days using mapping
+✔ Dropping duplicate or unnecessary columns
+✔ Uploading cleaned data to SQL Server using SQLAlchemy
+
+📁 Python notebook:
 python/data_cleaning_and_preprocessing.ipynb
 
-SQL Server Analysis
-Key Questions Answered
+🗄 SQL Server Analysis
+🔍 Key Questions Answered
 
 ✔ Total revenue by gender
 ✔ Customers using discount but spending above average
-✔ Top 5 products by review rating
+✔ Top 5 products by highest average review rating
 ✔ Average purchase amount by shipping type
-✔ Subscribers vs non-subscribers spending
-✔ Discount usage percentage by product
-✔ Customer segmentation (New, Returning, Loyal)
-✔ Top 3 most purchased products per category
-✔ Repeat buyers subscription behavior
-✔ Revenue contribution by age groups
+✔ Do subscribed customers spend more?
+✔ Top 5 products with highest discount usage %
+✔ Customer segmentation (New / Returning / Loyal)
+✔ Top 3 most purchased products within each category
+✔ Are repeat buyers likely to subscribe?
+✔ Revenue contribution by each age group
 
-SQL queries in:
+📁 SQL Queries:
 sql/business_queries.sql
 
 📊 Power BI Dashboard Features
 Dashboard Includes:
-KPIs (Revenue, Avg Purchase Amount, Avg Rating, Customer Count)
-Revenue by Category
-Sales by Category
-% Subscribers
-Age group analysis
-Payment method distribution
-Slicers: Gender, Category, Subscription Status, Shipping Type
 
-Dashboard file:
+KPIs:
+‣ Total Revenue
+‣ Avg Purchase Amount
+‣ Avg Review Rating
+‣ Total Customers
+
+Visuals:
+✔ Revenue by Category
+✔ Sales by Category
+✔ % Subscribers
+✔ Age Group Performance
+✔ Payment Method Distribution
+✔ Revenue by Shipping Type
+✔ Top Products & Category Insights
+
+Interactive Slicers:
+✔ Gender
+✔ Category
+✔ Subscription Status
+✔ Shipping Type
+
+📁 Dashboard File:
 powerbi/customer_behavior_dashboard.pbix
 
-Screenshots in /images.
-
-<img width="1346" height="758" alt="image" src="https://github.com/user-attachments/assets/c78f6888-433f-4300-8af2-bd9865937b2f" />
+📁 Dashboard Screenshots:
