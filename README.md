@@ -1,23 +1,18 @@
 Customer Sales Behavior Analysis
 Python • SQL Server • Power BI • End-to-End Data Analytics Project
-📌 Project Overview
 
+Project Overview
 This project analyzes customer shopping behavior using Python, SQL Server, and Power BI.
 The goal is to understand patterns in customer demographics, purchase decisions, product performance, and subscription behavior.
 
-🚀 Tech Stack
-
+Tech Stack
 Python → Data cleaning, preprocessing, transformation
-
 SQL Server → Data storage, analysis queries
-
 Power BI → Dashboard visualization
-
 Pandas, NumPy, SQLAlchemy, pyodbc
 
-🧹 Python Tasks (Data Cleaning)
-
-✔ Handle missing values
+Python Tasks (Data Cleaning)
+✔ Handle missing values.
 ✔ Column renaming (snake case)
 ✔ Create age_group column using qcut
 ✔ Add purchase_frequency_days
@@ -27,7 +22,7 @@ Pandas, NumPy, SQLAlchemy, pyodbc
 Code available in:
 python/data_cleaning_and_preprocessing.ipynb
 
-🗄 SQL Server Analysis
+SQL Server Analysis
 Key Questions Answered
 
 ✔ Total revenue by gender
@@ -46,19 +41,12 @@ sql/business_queries.sql
 
 📊 Power BI Dashboard Features
 Dashboard Includes:
-
 KPIs (Revenue, Avg Purchase Amount, Avg Rating, Customer Count)
-
 Revenue by Category
-
 Sales by Category
-
 % Subscribers
-
 Age group analysis
-
 Payment method distribution
-
 Slicers: Gender, Category, Subscription Status, Shipping Type
 
 Dashboard file:
